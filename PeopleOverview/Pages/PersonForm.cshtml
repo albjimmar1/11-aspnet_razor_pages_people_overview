@@ -1,0 +1,81 @@
+﻿@page
+@model PeopleOverview.Pages.PersonFormModel
+@{
+    ViewData["Title"] = "Person Form";
+}
+<h1>Person Form</h1>
+
+<form method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="form-group">
+        <label asp-for="NewPerson.Name" class="control-label">Name</label>
+        <input asp-for="NewPerson.Name" class="form-control" />
+        <span asp-validation-for="NewPerson.Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="NewPerson.Surnames" class="control-label">Surnames</label>
+        <input asp-for="NewPerson.Surnames" class="form-control" />
+        <span asp-validation-for="NewPerson.Surnames" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="NewPerson.Age" class="control-label">Age</label>
+        <input asp-for="NewPerson.Age" class="form-control" />
+        <span asp-validation-for="NewPerson.Age" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="NewPerson.CountryOfBirth" class="control-label">Country of birth</label>
+        <input asp-for="NewPerson.CountryOfBirth" class="form-control" />
+        <span asp-validation-for="NewPerson.CountryOfBirth" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="NewPerson.CountryOfResidence" class="control-label">Country of residence</label>
+        <input asp-for="NewPerson.CountryOfResidence" class="form-control" />
+        <span asp-validation-for="NewPerson.CountryOfResidence" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="NewPerson.Job" class="control-label">Job</label>
+        <input asp-for="NewPerson.Job" class="form-control" />
+        <span asp-validation-for="NewPerson.Job" class="text-danger"></span>
+    </div>
+    <div class="form-group form-check">
+        <label class="form-check-label">You are satisfied with your job
+            <input class="form-check-input" asp-for="NewPerson.IsSatisfiedWithWork" /> <!--@Html.DisplayNameFor(model =>
+            model.NewPerson.IsSatisfiedWithWork)-->
+        </label>
+    </div>
+    <div class="form-group">
+        <label asp-for="NewPerson.GrossAnnualSalary" class="control-label">Gross annual salary</label>
+        <input asp-for="NewPerson.GrossAnnualSalary" class="form-control" />
+        <span asp-validation-for="NewPerson.GrossAnnualSalary" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="NewPerson.Currency" class="control-label"></label>
+        <select asp-for="NewPerson.Currency" class="form-control" id="PizzaSize">
+            <option value="" hidden>-- Select Currency --</option>
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+            <option value="JPY">JPY</option>
+            <option value="GBP">GBP</option>
+            <option value="AUD">AUD</option>
+            <option value="CAD">CAD</option>
+            <option value="CHF">CHF</option>
+            <option value="CNH">CNH</option>
+            <option value="HKD">HKD</option>
+            <option value="NZD">NZD</option>
+        </select>
+        <span asp-validation-for="NewPerson.Currency" class="text-danger"></span>
+    </div>
+    <div class="form-group form-check">
+        <label class="form-check-label">You are satisfied with your salary
+            <input class="form-check-input" asp-for="NewPerson.IsSatisfiedWithSalary" /> <!--@Html.DisplayNameFor(model =>
+            model.NewPerson.IsSatisfiedWithSalary)-->
+        </label>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Create" class="btn btn-primary" />
+    </div>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

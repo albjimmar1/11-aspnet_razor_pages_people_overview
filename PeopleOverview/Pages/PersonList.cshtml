@@ -1,0 +1,44 @@
+﻿@page
+@model PeopleOverview.Pages.PersonListModel
+@{
+    ViewData["Title"] = "Person List";
+}
+<h1>Person List</h1>
+
+<table class="table mt-5">
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <!--<th scope="col">Surnames</th>-->
+            <th scope="col">Age</th>
+            <!--<th scope="col">Country of birth</th>-->
+            <th scope="col">Country of residence</th>
+            <th scope="col">Job</th>
+            <th scope="col">Satisfied with work</th>
+            <th scope="col">Gross annual salary</th>
+            <th scope="col">Currency</th>
+            <th scope="col">Satisfied with salary</th>
+            <th scope="col">Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var person in Model.PersonList)
+    {
+        <tr>
+            <td>@person.Name</td>
+            <td>@person.Age</td>
+            <td>@person.CountryOfResidence</td>
+            <td>@person.Job</td>
+            <td>@(person.IsSatisfiedWithWork ? "Yes" : "No")</td>
+            <td>@person.GrossAnnualSalary</td>
+            <td>@person.Currency</td>
+            <td>@(person.IsSatisfiedWithSalary ? "Yes" : "No")</td>
+            <td>
+                <form method="post" asp-page-handler="Delete" asp-route-id="@person.Id">
+                    <button class="btn btn-danger">Delete</button>
+                </form>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

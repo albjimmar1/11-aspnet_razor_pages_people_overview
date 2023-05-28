@@ -1,0 +1,18 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "People information";
+    TimeSpan timeInBusiness = DateTime.Now - new DateTime(2023, 5, 27, 14, 12, 00);
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to people overview</h1>
+    <p class="lead">Developed @Convert.ToInt32(timeInBusiness.TotalDays) days ago!</p>
+    <div style="margin: auto;">
+    <p style="text-align: justify;">
+        Web application to display and record general information about people.<br>
+        The information is displayed on the Person List page.<br>
+        Information can be recorded on the Person Form page.<br>
+    </p>
+    </div>
+</div>
