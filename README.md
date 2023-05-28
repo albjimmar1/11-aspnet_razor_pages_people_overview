@@ -1,4 +1,4 @@
-## General people webapp
+## General people information webapp
 
 Web application to display and record general information about people.
 The information is displayed on the "Person List" page.
