@@ -1,8 +1,8 @@
 ## General people information webapp
 
-Web application to display and record general information about people.
-The information is displayed on the "Person List" page.
-Information can be recorded on the "Person Form" page.
+Web application to display and record general information about people.<br>
+The information is displayed on the "Person List" page.<br>
+Information can be recorded on the "Person Form" page.<br>
 
 # Technologies
 
